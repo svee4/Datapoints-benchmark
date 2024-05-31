@@ -118,7 +118,7 @@ public class Benchmark
     [Benchmark]
     public Coordinate ProbablyUBSIMD()
     {
-        // reinterpret Coordinate as [double, double] and run operations so that even index is x and odd is y
+        // reinterpret Coordinate as double[] and run operations so that even index is x and odd is y
         var span = CollectionsMarshal.AsSpan(_coordinates);
         ref var start = ref Unsafe.As<Coordinate, double>(ref span[0]);
 
